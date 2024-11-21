@@ -65,9 +65,7 @@ public class HomeController {
             newJob.setEmployer(employer);
         }
         List<Skill> skillObjects = (List<Skill>) skillRepository.findAllById(skills);
-        if (!skillObjects.isEmpty()) {
-            newJob.setSkills(skillObjects);
-        }
+        newJob.setSkills(skillObjects);
         jobRepository.save(newJob);
 
         return "redirect:";
